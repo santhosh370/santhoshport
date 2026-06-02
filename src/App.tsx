@@ -97,9 +97,9 @@ export default function App() {
             </div>
           </div>
 
-          <div className="logo cursor-pointer" onClick={() => setView('home')}>
-            <img src="/LOGO.jpeg" alt="Logo" className="w-8 h-8 md:w-10 md:h-10 rounded-full object-cover inline-block mr-2 align-middle border border-white/20" />
-            <span className="hidden md:inline">Santhosh Kumar</span>
+          <div className="logo cursor-pointer flex items-center" onClick={() => setView('home')}>
+            <img src="/LOGO.jpeg" alt="Logo" className="w-8 h-8 md:w-10 md:h-10 rounded-full object-cover border border-white/20" />
+            <span className="ml-2 whitespace-nowrap">Santhosh Kumar</span>
           </div>
           <div className={`left-menu text-neutral-900`}>
             <span className={activeItem === "Experience" ? "active" : ""} onClick={() => { setActiveItem("Experience"); setView('experience'); }}>Experience</span>

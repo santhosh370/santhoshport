@@ -78,7 +78,6 @@ body {
 
   
   /* Hide elements on mobile split view */
-  .split.active ~ .logo,
   .split.active ~ .left-menu,
   .split.active ~ .right-text,
   .split.active ~ .social,
@@ -86,6 +85,11 @@ body {
   .split.active ~ .bottom-right,
   .split.active ~ .sayhi {
     display: none !important;
+  }
+
+  .logo {
+    @apply top-4 left-4 text-[14px] flex items-center;
+    width: auto !important;
   }
 
   /* Responsive Padding for Split View */
