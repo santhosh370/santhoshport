@@ -24,49 +24,50 @@ export default function ProjectsPage({ onBack }: { onBack: () => void }) {
       {/* Back Button */}
       <button 
         onClick={onBack}
-        className="fixed top-8 left-8 z-50 p-3 bg-white/10 backdrop-blur-md rounded-full hover:bg-white/20 transition-colors"
+        className="fixed top-6 left-6 md:top-8 md:left-8 z-[60] p-3 bg-white/10 backdrop-blur-md rounded-full hover:bg-white/20 transition-colors shadow-xl"
       >
         <ArrowLeft size={24} />
       </button>
 
       {/* Heading */}
-      <h1 className="fixed top-8 left-0 right-0 text-center text-3xl md:text-4xl font-bold text-white/50 z-40 tracking-widest pointer-events-none">PROJECTS</h1>
+      <h1 className="fixed top-8 md:top-12 left-0 right-0 text-center text-2xl md:text-4xl font-bold text-white/40 z-40 tracking-[0.3em] font-sans pointer-events-none uppercase">PROJECTS</h1>
       
       {/* Decorative Text */}
-      <h1 className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[20vw] font-bold text-neutral-800/20 select-none pointer-events-none">WORK</h1>
-      <p className="fixed bottom-8 right-8 text-2xl font-light text-neutral-600 select-none pointer-events-none">Swipe.</p>
+      <h1 className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[25vw] font-black text-neutral-800/10 select-none pointer-events-none uppercase italic">WORK</h1>
+      <p className="fixed bottom-6 right-6 md:bottom-8 md:right-8 text-xl md:text-2xl font-light text-neutral-700 select-none pointer-events-none animate-pulse">Swipe.</p>
 
       {/* Project Carousel */}
-      <div className="flex items-center justify-center h-full w-full">
-        <motion.div 
-          className="flex gap-8 overflow-x-auto px-[calc(50vw-160px)] snap-x snap-mandatory hide-scrollbar"
-          drag="x"
-          dragConstraints={{ left: -1000, right: 1000 }}
+      <div className="flex items-center h-full w-full overflow-hidden">
+        <div 
+          className="flex gap-6 md:gap-10 overflow-x-auto px-10 md:px-[calc(50vw-160px)] snap-x snap-mandatory hide-scrollbar w-full py-20"
         >
           {projects.map((project, index) => (
             <motion.div 
               key={index}
-              className="snap-center w-[320px] h-[450px] flex-shrink-0 bg-white/5 backdrop-blur-xl border border-white/10 rounded-[40px] overflow-hidden flex flex-col hover:scale-105 transition-transform duration-300"
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: index * 0.1, duration: 0.6, ease: "easeOut" }}
+              className="snap-center w-[290px] md:w-[320px] h-[420px] md:h-[480px] flex-shrink-0 bg-white/5 backdrop-blur-xl border border-white/10 rounded-[35px] md:rounded-[45px] overflow-hidden flex flex-col hover:border-white/30 transition-all duration-500 group shadow-2xl"
             >
-              <img src={project.image} alt={project.title} className="w-full h-1/2 object-cover" />
-              <div className="p-6 flex flex-col justify-between flex-grow">
+              <img src={project.image} alt={project.title} className="w-full h-2/5 md:h-1/2 object-cover" />
+              <div className="p-5 md:p-6 flex flex-col justify-between flex-grow">
                 <div>
-                  <h2 className="text-2xl font-bold mb-2">{project.title}</h2>
-                  <p className="text-neutral-300 text-sm">{project.description}</p>
+                  <h2 className="text-xl md:text-2xl font-bold mb-2 leading-tight">{project.title}</h2>
+                  <p className="text-neutral-400 text-xs md:text-sm line-clamp-4">{project.description}</p>
                 </div>
                 <a 
                   href={project.githubLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-white/70 hover:text-white transition-colors"
+                  className="mt-4 inline-flex items-center gap-2 text-xs md:text-sm font-semibold text-white/70 hover:text-white transition-colors"
                 >
-                  <Github size={20} />
+                  <Github size={18} />
                   View on GitHub
                 </a>
               </div>
             </motion.div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </motion.section>
   );
