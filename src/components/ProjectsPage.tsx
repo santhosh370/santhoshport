@@ -32,6 +32,8 @@ export default function ProjectsPage({ onBack }: { onBack: () => void }) {
       {/* Heading */}
       <h1 className="fixed top-8 md:top-12 left-0 right-0 text-center text-2xl md:text-4xl font-bold text-white/40 z-40 tracking-[0.3em] font-sans pointer-events-none uppercase">PROJECTS</h1>
       
+
+      
       {/* Decorative Text */}
       <h1 className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[25vw] font-black text-neutral-800/10 select-none pointer-events-none uppercase italic">WORK</h1>
       <p className="fixed bottom-6 right-6 md:bottom-8 md:right-8 text-xl md:text-2xl font-light text-neutral-700 select-none pointer-events-none animate-pulse">Swipe.</p>
@@ -39,7 +41,7 @@ export default function ProjectsPage({ onBack }: { onBack: () => void }) {
       {/* Project Carousel */}
       <div className="flex items-center h-full w-full overflow-hidden">
         <div 
-          className="flex gap-6 md:gap-10 overflow-x-auto px-10 md:px-[calc(50vw-160px)] snap-x snap-mandatory hide-scrollbar w-full py-20"
+          className="flex gap-4 md:gap-10 overflow-x-auto px-4 md:px-[calc(50vw-160px)] snap-x snap-mandatory hide-scrollbar w-full py-20"
         >
           {projects.map((project, index) => (
             <motion.div 
@@ -47,7 +49,7 @@ export default function ProjectsPage({ onBack }: { onBack: () => void }) {
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: index * 0.1, duration: 0.6, ease: "easeOut" }}
-              className="snap-center w-[290px] md:w-[320px] h-[420px] md:h-[480px] flex-shrink-0 bg-white/5 backdrop-blur-xl border border-white/10 rounded-[35px] md:rounded-[45px] overflow-hidden flex flex-col hover:border-white/30 transition-all duration-500 group shadow-2xl"
+              className="snap-center w-[260px] md:w-[320px] h-[400px] md:h-[480px] flex-shrink-0 bg-white/5 backdrop-blur-xl border border-white/10 rounded-[35px] md:rounded-[45px] overflow-hidden flex flex-col hover:border-white/30 transition-all duration-500 group shadow-2xl"
             >
               <img src={project.image} alt={project.title} className="w-full h-2/5 md:h-1/2 object-cover" />
               <div className="p-5 md:p-6 flex flex-col justify-between flex-grow">

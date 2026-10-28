@@ -141,7 +141,7 @@ export default function AboutPage({ onBack }: { onBack: () => void }) {
             className="flex-1"
           >
             <span className="text-blue-600 font-semibold tracking-widest text-sm uppercase">ABOUT</span>
-            <h2 className="text-4xl md:text-6xl font-bold mt-2 mb-4 text-neutral-900">Hi, I'm Santhosh</h2>
+            <h2 className="text-4xl md:text-6xl font-bold mt-2 mb-4 text-neutral-900 hidden md:block">Hi, I'm Santhosh</h2>
             <p className="text-lg md:text-xl text-neutral-600 font-medium mb-6">Full Stack Developer | AI Enthusiast</p>
             <p className="text-neutral-600 leading-[1.7] max-w-[500px] mb-4">
               Hi, I'm Santhosh — a Full Stack Developer and AI enthusiast. I specialize in building clean, scalable web applications with a strong focus on user experience and performance.

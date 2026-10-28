@@ -41,6 +41,7 @@ export default function App() {
           <FeatsPage onBack={() => setView('home')} />
         ) : (
           <div className={`main ${active ? "inactive" : ""} relative overflow-hidden`} id="main">
+            <div className={`name-logo ${active ? "text-white" : "text-neutral-900"}`}>Santhosh Kumar</div>
             <HeroBackground />
             <div className="flex flex-col items-center">
               <div className="relative w-[180px] h-[180px] flex items-center justify-center">
@@ -64,6 +65,7 @@ export default function App() {
       {view === 'home' && (
         <>
           <div className={`split ${active ? "active" : ""} relative overflow-hidden`} id="split">
+            <div className={`name-logo ${active ? "text-white" : "text-neutral-900"}`}>Santhosh Kumar</div>
             <HeroBackground />
             <div className="back" onClick={() => setActive(false)}>
               <svg viewBox="0 0 24 24">
@@ -73,7 +75,7 @@ export default function App() {
             <div className="left">
               <div className="box">
                 <h1>Hi,</h1>
-                <h2>I'm Santhosh Kumar</h2>
+                <h2 className="text-xl font-medium mb-4 hidden md:block">I'm Santhosh Kumar</h2>
                 <p>
                   A passionate and self-driven developer focused on building modern, responsive, and user-friendly web applications. I enjoy solving real-world problems using clean and efficient code. I am constantly learning new technologies and am always looking for opportunities to contribute to impactful projects. Founder & CEO of Sanlog Innovation.
                 </p>
@@ -97,10 +99,7 @@ export default function App() {
             </div>
           </div>
 
-          <div className="logo cursor-pointer flex items-center" onClick={() => setView('home')}>
-            <img src="/LOGO.jpeg" alt="Logo" className="w-8 h-8 md:w-10 md:h-10 rounded-full object-cover border border-white/20" />
-            <span className="ml-2 whitespace-nowrap">Santhosh Kumar</span>
-          </div>
+
           <div className={`left-menu text-neutral-900`}>
             <span className={activeItem === "Experience" ? "active" : ""} onClick={() => { setActiveItem("Experience"); setView('experience'); }}>Experience</span>
             <span className={activeItem === "Projects" ? "active" : ""} onClick={() => { setActiveItem("Projects"); setView('projects'); }}>Projects</span>
